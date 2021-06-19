@@ -27,6 +27,37 @@ Project File Date:  06/17/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
+LCD.c(1): warning: In file included from...
+./LCD.h(36): warning: no newline at end of file [-Wnewline-eof]
+void LCDInit(void);
+                   ^
+LCD.c(28): warning: implicitly declaring library function 'strlen' with type 'unsigned int (const char *)' [-Wimplicit-function-declaration]
+        for(int i = 0 ; i < strlen(text); i++){
+                            ^
+LCD.c(28): note: include the header <string.h> or explicitly provide a declaration for 'strlen'
+LCD.c(28): warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
+        for(int i = 0 ; i < strlen(text); i++){
+                        ~ ^ ~~~~~~~~~~~~
+LCD.c(61): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+4 warnings generated.
+compiling LCD.c...
+compiling freertos_evr.c...
+assembling startup_TM4C123.s...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/MemMang/heap_1.c(129): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        configASSERT( pv == NULL );
+                                  ^
+1 warning generated.
+compiling heap_1.c...
+UART.c(33): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'unsigned char' [-Wimplicit-int-conversion]
+  return UARTCharGet(UART0_BASE);
+  ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~
+UART.c(51): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+2 warnings generated.
+compiling UART.c...
 C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F/port.c(227): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
         configASSERT( uxCriticalNesting == ~0UL );
                                                  ^
@@ -62,11 +93,314 @@ C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portabl
                                                                                                  ^
 11 warnings generated.
 compiling port.c...
-C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/MemMang/heap_1.c(129): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        configASSERT( pv == NULL );
-                                  ^
-1 warning generated.
-compiling heap_1.c...
+compiling list.c...
+main.c(1): warning: In file included from...
+./init.h(40): warning: no newline at end of file [-Wnewline-eof]
+} AMessage;
+           ^
+main.c(2): warning: In file included from...
+./LCD.h(36): warning: no newline at end of file [-Wnewline-eof]
+void LCDInit(void);
+                   ^
+main.c(27): warning: no previous prototype for function 'Read_Time' [-Wmissing-prototypes]
+void Read_Time(char buf[]){
+     ^
+main.c(27): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Read_Time(char buf[]){
+^
+static 
+main.c(28): warning: variable 'c' is used uninitialized whenever function 'Read_Time' is called [-Wsometimes-uninitialized]
+        unsigned char c;
+        ~~~~~~~~~~~~~~^
+main.c(30): note: uninitialized use occurs here
+        while(c != 0x0d){
+              ^
+main.c(28): note: initialize the variable 'c' to silence this warning
+        unsigned char c;
+                       ^
+                        = '\0'
+main.c(46): warning: no previous prototype for function 'Read_From_Keyboard' [-Wmissing-prototypes]
+unsigned int Read_From_Keyboard(){
+             ^
+main.c(46): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned int Read_From_Keyboard(){
+^
+static 
+main.c(46): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+unsigned int Read_From_Keyboard(){
+                               ^
+main.c(66): warning: no previous prototype for function 'ByteToStr' [-Wmissing-prototypes]
+void ByteToStr(unsigned char c, char *Txt){
+     ^
+main.c(66): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ByteToStr(unsigned char c, char *Txt){
+^
+static 
+main.c(81): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+static void Task1(void *pvParameters){
+                        ^
+main.c(81): warning: function 'Task1' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+static void Task1(void *pvParameters){
+                                     ^
+main.c(129): warning: passing 'const char [10]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                LCDPrintString(cities[selection]); // Display the selection on LCD screen
+                               ^~~~~~~~~~~~~~~~~
+./LCD.h(35): note: passing argument to parameter here
+void LCDPrintString(char *);
+                          ^
+main.c(131): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+                Tim.hh = (Tim.hh + timediff[selection]); // Add the time difference of the selection to the london time hours
+                       ~  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+main.c(112): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+static void Task2(void *pvParameters){
+                        ^
+main.c(112): warning: function 'Task2' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+static void Task2(void *pvParameters){
+                                     ^
+main.c(157): warning: implicit conversion changes signedness: 'int32_t' (aka 'int') to 'unsigned int' [-Wsign-conversion]
+        selection = UARTCharGetNonBlocking(UART0_BASE);
+                  ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(161): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
+                                                         ^
+main.c(180): warning: passing 'char [27]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        UARTPrintString("TIME IN DIFFERENT CITIES\r\n");
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(181): warning: passing 'char [27]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        UARTPrintString("========================\r\n");
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(182): warning: passing 'char [44]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        UARTPrintString("Please enter time in london (hh:mm:ss):  \r\n");
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(196): warning: passing 'char [33]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                UARTPrintString("Select a city to display time:\r\n");
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(200): warning: passing 'char [3]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                        UARTPrintString(". ");
+                                        ^~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(202): warning: array subscript is of type 'char' [-Wchar-subscripts]
+                        UARTPrintString(cities[k]);
+                                              ^~
+main.c(202): warning: passing 'const char [10]' to parameter of type 'unsigned char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                        UARTPrintString(cities[k]);
+                                        ^~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(203): warning: passing 'char [3]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                        UARTPrintString("\r\n");
+                                        ^~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(205): warning: passing 'char [13]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                UARTPrintString("Selection:  ");
+                                ^~~~~~~~~~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(207): warning: implicit conversion loses integer precision: 'unsigned int' to 'unsigned char' [-Wimplicit-int-conversion]
+                UARTPrintChar(selection);
+                ~~~~~~~~~~~~~ ^~~~~~~~~
+main.c(208): warning: passing 'char [3]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                UARTPrintString("\n\r");
+                                ^~~~~~
+./UART.h(20): note: passing argument to parameter 'str' here
+void UARTPrintString(unsigned char *str);
+                                    ^
+main.c(175): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+static void Task3(void *pvParameters){
+                        ^
+main.c(175): warning: function 'Task3' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+static void Task3(void *pvParameters){
+                                     ^
+main.c(1): warning: In file included from...
+./init.h(27): warning: no previous extern declaration for non-static variable 'xQueue1' [-Wmissing-variable-declarations]
+xQueueHandle xQueue1 ;
+             ^
+./init.h(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+xQueueHandle xQueue1 ;
+^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(940): note: expanded from macro 'xQueueHandle'
+        #define xQueueHandle QueueHandle_t
+                             ^
+main.c(1): warning: In file included from...
+./init.h(28): warning: no previous extern declaration for non-static variable 'xQueue2' [-Wmissing-variable-declarations]
+xQueueHandle xQueue2 ;
+             ^
+./init.h(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+xQueueHandle xQueue2 ;
+^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(940): note: expanded from macro 'xQueueHandle'
+        #define xQueueHandle QueueHandle_t
+                             ^
+main.c(1): warning: In file included from...
+./init.h(29): warning: no previous extern declaration for non-static variable 'xSemaphore0' [-Wmissing-variable-declarations]
+SemaphoreHandle_t xSemaphore0;
+                  ^
+./init.h(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+SemaphoreHandle_t xSemaphore0;
+^
+./init.h(31): warning: no previous extern declaration for non-static variable 'selection' [-Wmissing-variable-declarations]
+unsigned int selection;
+             ^
+./init.h(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned int selection;
+^
+32 warnings generated.
+compiling main.c...
+RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  union {
+  ^
+44 warnings generated.
+compiling system_TM4C123.c...
+assembling startup_rvmdk.S...
 C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c(259): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
         configASSERT( pxQueue );
                                ^
@@ -228,334 +562,6 @@ C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/queue.c
                                                                                                       ^
 53 warnings generated.
 compiling queue.c...
-compiling freertos_evr.c...
-compiling list.c...
-UART.c(33): warning: implicit conversion loses integer precision: 'int32_t' (aka 'int') to 'unsigned char' [-Wimplicit-int-conversion]
-  return UARTCharGet(UART0_BASE);
-  ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~
-UART.c(51): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-2 warnings generated.
-compiling UART.c...
-LCD.c(1): warning: In file included from...
-./LCD.h(36): warning: no newline at end of file [-Wnewline-eof]
-void LCDInit(void);
-                   ^
-LCD.c(28): warning: implicitly declaring library function 'strlen' with type 'unsigned int (const char *)' [-Wimplicit-function-declaration]
-        for(int i = 0 ; i < strlen(text); i++){
-                            ^
-LCD.c(28): note: include the header <string.h> or explicitly provide a declaration for 'strlen'
-LCD.c(28): warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
-        for(int i = 0 ; i < strlen(text); i++){
-                        ~ ^ ~~~~~~~~~~~~
-LCD.c(61): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-4 warnings generated.
-compiling LCD.c...
-assembling startup_TM4C123.s...
-RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-44 warnings generated.
-compiling system_TM4C123.c...
-main.c(1): warning: In file included from...
-./init.h(40): warning: no newline at end of file [-Wnewline-eof]
-} AMessage;
-           ^
-main.c(2): warning: In file included from...
-./LCD.h(36): warning: no newline at end of file [-Wnewline-eof]
-void LCDInit(void);
-                   ^
-main.c(27): warning: no previous prototype for function 'Read_Time' [-Wmissing-prototypes]
-void Read_Time(char buf[]){
-     ^
-main.c(27): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void Read_Time(char buf[]){
-^
-static 
-main.c(28): warning: variable 'c' is used uninitialized whenever function 'Read_Time' is called [-Wsometimes-uninitialized]
-        unsigned char c;
-        ~~~~~~~~~~~~~~^
-main.c(30): note: uninitialized use occurs here
-        while(c != 0x0d){
-              ^
-main.c(28): note: initialize the variable 'c' to silence this warning
-        unsigned char c;
-                       ^
-                        = '\0'
-main.c(46): warning: no previous prototype for function 'Read_From_Keyboard' [-Wmissing-prototypes]
-unsigned int Read_From_Keyboard(){
-             ^
-main.c(46): note: declare 'static' if the function is not intended to be used outside of this translation unit
-unsigned int Read_From_Keyboard(){
-^
-static 
-main.c(46): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
-unsigned int Read_From_Keyboard(){
-                               ^
-main.c(66): warning: no previous prototype for function 'ByteToStr' [-Wmissing-prototypes]
-void ByteToStr(unsigned char c, char *Txt){
-     ^
-main.c(66): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void ByteToStr(unsigned char c, char *Txt){
-^
-static 
-main.c(81): warning: unused parameter 'pvParameters' [-Wunused-parameter]
-static void Task1(void *pvParameters){
-                        ^
-main.c(81): warning: function 'Task1' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-static void Task1(void *pvParameters){
-                                     ^
-main.c(127): warning: passing 'const char [10]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-                LCDPrintString(cities[selection]); // Display the selection on LCD screen
-                               ^~~~~~~~~~~~~~~~~
-./LCD.h(35): note: passing argument to parameter here
-void LCDPrintString(char *);
-                          ^
-main.c(129): warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
-                Tim.hh = (Tim.hh + timediff[selection]); // Add the time difference of the selection to the london time hours
-                       ~  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~
-main.c(112): warning: unused parameter 'pvParameters' [-Wunused-parameter]
-static void Task2(void *pvParameters){
-                        ^
-main.c(112): warning: function 'Task2' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-static void Task2(void *pvParameters){
-                                     ^
-main.c(154): warning: implicit conversion changes signedness: 'int32_t' (aka 'int') to 'unsigned int' [-Wsign-conversion]
-        selection = UARTCharGetNonBlocking(UART0_BASE);
-                  ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-main.c(158): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
-                                                         ^
-main.c(177): warning: passing 'char [27]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-        UARTPrintString("TIME IN DIFFERENT CITIES\r\n");
-                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(178): warning: passing 'char [27]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-        UARTPrintString("========================\r\n");
-                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(179): warning: passing 'char [44]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-        UARTPrintString("Please enter time in london (hh:mm:ss):  \r\n");
-                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(193): warning: passing 'char [33]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-                UARTPrintString("Select a city to display time:\r\n");
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(197): warning: passing 'char [3]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-                        UARTPrintString(". ");
-                                        ^~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(199): warning: array subscript is of type 'char' [-Wchar-subscripts]
-                        UARTPrintString(cities[k]);
-                                              ^~
-main.c(199): warning: passing 'const char [10]' to parameter of type 'unsigned char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-                        UARTPrintString(cities[k]);
-                                        ^~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(200): warning: passing 'char [3]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-                        UARTPrintString("\r\n");
-                                        ^~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(202): warning: passing 'char [13]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-                UARTPrintString("Selection:  ");
-                                ^~~~~~~~~~~~~~
-./UART.h(20): note: passing argument to parameter 'str' here
-void UARTPrintString(unsigned char *str);
-                                    ^
-main.c(204): warning: implicit conversion loses integer precision: 'unsigned int' to 'unsigned char' [-Wimplicit-int-conversion]
-                UARTPrintChar(selection);
-                ~~~~~~~~~~~~~ ^~~~~~~~~
-main.c(172): warning: unused parameter 'pvParameters' [-Wunused-parameter]
-static void Task3(void *pvParameters){
-                        ^
-main.c(172): warning: function 'Task3' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-static void Task3(void *pvParameters){
-                                     ^
-main.c(1): warning: In file included from...
-./init.h(27): warning: no previous extern declaration for non-static variable 'xQueue1' [-Wmissing-variable-declarations]
-xQueueHandle xQueue1 ;
-             ^
-./init.h(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-xQueueHandle xQueue1 ;
-^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(940): note: expanded from macro 'xQueueHandle'
-        #define xQueueHandle QueueHandle_t
-                             ^
-main.c(1): warning: In file included from...
-./init.h(28): warning: no previous extern declaration for non-static variable 'xQueue2' [-Wmissing-variable-declarations]
-xQueueHandle xQueue2 ;
-             ^
-./init.h(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-xQueueHandle xQueue2 ;
-^
-C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include\FreeRTOS.h(940): note: expanded from macro 'xQueueHandle'
-        #define xQueueHandle QueueHandle_t
-                             ^
-main.c(1): warning: In file included from...
-./init.h(29): warning: no previous extern declaration for non-static variable 'xSemaphore0' [-Wmissing-variable-declarations]
-SemaphoreHandle_t xSemaphore0;
-                  ^
-./init.h(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-SemaphoreHandle_t xSemaphore0;
-^
-./init.h(31): warning: no previous extern declaration for non-static variable 'selection' [-Wmissing-variable-declarations]
-unsigned int selection;
-             ^
-./init.h(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-unsigned int selection;
-^
-31 warnings generated.
-compiling main.c...
-assembling startup_rvmdk.S...
 C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/timers.c(275): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
         configASSERT( xReturn );
                                ^
@@ -889,8 +895,8 @@ C:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/tasks.c
 87 warnings generated.
 compiling tasks.c...
 linking...
-Program Size: Code=16884 RO-data=2544 RW-data=1644 ZI-data=9168  
-".\Objects\timecities.axf" - 0 Error(s), 254 Warning(s).
+Program Size: Code=16888 RO-data=2548 RW-data=1644 ZI-data=9168  
+".\Objects\timecities.axf" - 0 Error(s), 255 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -930,13 +936,13 @@ Package Vendor: Keil
       Include file:  Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.3.1
-      Include file:  Source\include\queue.h
-      Include file:  Source\include\semphr.h
+      Source file:   Source\tasks.c
       Include file:  Source\include\FreeRTOS.h
-      Source file:   Source\queue.c
+      Include file:  Source\include\queue.h
       Include file:  Source\include\task.h
       Source file:   Source\list.c
-      Source file:   Source\tasks.c
+      Source file:   Source\queue.c
+      Include file:  Source\include\semphr.h
       Source file:   Source\portable\GCC\ARM_CM4F\port.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
@@ -944,16 +950,16 @@ Package Vendor: Keil
       Source file:   Source\portable\MemMang\heap_1.c
 
    * Component: ARM.FreeRTOS::RTOS:Timers:10.3.1
-      Source file:   Source\timers.c
       Include file:  Source\include\timers.h
+      Source file:   Source\timers.c
 
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.1
-      Source file:   Device\Source\ARM\startup_TM4C123.s
       Source file:   Device\Source\system_TM4C123.c
       Include file:  Device\Include\TM4C123\TM4C123.h
-Build Time Elapsed:  00:00:04
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

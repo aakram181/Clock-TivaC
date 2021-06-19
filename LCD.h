@@ -11,10 +11,10 @@
 
 
 
-/*** PORTD***/
+/*** PORTA***/
 #define REGISTER_SELECT GPIO_PIN_2
 #define READ_WRITE GPIO_PIN_3
-#define ENABLE GPIO_PIN_6
+#define ENABLE GPIO_PIN_4
 /**PORT B***/
 #define D0 GPIO_PIN_0
 #define D1 GPIO_PIN_1

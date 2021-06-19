@@ -205,7 +205,7 @@ static void Task3(void *pvParameters){
 		UARTPrintString("Selection:  ");
 		xSemaphoreTake(xSemaphore0,portMAX_DELAY);
 		UARTPrintChar(selection);
-		UARTPrintChar("\n");
+		UARTPrintString("\n\r");
 
 		selection = selection - '0';
 

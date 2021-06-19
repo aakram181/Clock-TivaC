@@ -1,12 +1,12 @@
 Dependencies for Project 'timecities', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
 F (.\startup_rvmdk.S)(0x60B6AFCB)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3 -D__EVAL-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION=534 -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/startup_rvmdk.o)
-F (.\main.c)(0x60CBBB29)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/main.o -MD)
+F (.\main.c)(0x60CDFA35)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/main.o -MD)
 I (init.h)(0x60CBAD62)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -34,10 +34,10 @@ I (C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\uart.h)(0x5FD9E4D6)
 I (C:\ti\TivaWare_C_Series-2.2.0.295\utils\uartstdio.h)(0x5FD9E505)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\semphr.h)(0x5EAA7808)
-I (LCD.h)(0x60C5249A)
+I (LCD.h)(0x60CDF8E3)
 I (UART.h)(0x60CBA99E)
-F (.\LCD.c)(0x60C9423A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/lcd.o -MD)
-I (LCD.h)(0x60C5249A)
+F (.\LCD.c)(0x60CDF9C8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/lcd.o -MD)
+I (LCD.h)(0x60CDF8E3)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6035F908)
@@ -47,7 +47,7 @@ I (C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h)(0x5FD9E4F8)
 I (C:\ti\TivaWare_C_Series-2.2.0.295\inc\hw_gpio.h)(0x5FD9E4F7)
 I (C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h)(0x5FD9E4D6)
 I (C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h)(0x6065C3DA)
-F (.\LCD.h)(0x60C5249A)()
+F (.\LCD.h)(0x60CDF8E3)()
 F (.\init.h)(0x60CBAD62)()
 F (.\UART.c)(0x60CBBE05)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/uart.o -MD)
 I (UART.h)(0x60CBA99E)
@@ -83,7 +83,7 @@ F (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -104,7 +104,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -118,7 +118,7 @@ F (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\port
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -134,7 +134,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -151,7 +151,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\projdefs.h)(0x5EAA7808)
@@ -168,7 +168,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\projdefs.h)(0x5EAA7808)
@@ -180,13 +180,12 @@ I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\incl
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h)(0x5EAA7808)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\timers.h)(0x5EAA7808)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\stack_macros.h)(0x5EAA7808)
-F (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)()
 F (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\timers.c)(0x5EAA780A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I C:/ti/TivaWare_C_Series-2.2.0.295 -xc -std=c99-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.3.1/Source/portable/GCC/ARM_CM4F-IC:/Users/LENOVO/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123-D__UVISION_VERSION="534" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o ./objects/timers.o -MD)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6035F908)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h)(0x5EAA7808)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6035F908)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x60CBAD77)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x5D8853E4)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6035F908)
 I (RTE\_Target_1\RTE_Components.h)(0x60CBAC48)
@@ -199,3 +198,4 @@ I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\incl
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h)(0x5EAA7808)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\queue.h)(0x5EAA7808)
 I (C:\Users\LENOVO\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\timers.h)(0x5EAA7808)
+F (RTE\RTOS\FreeRTOSConfig.h)(0x60CD70DC)()
