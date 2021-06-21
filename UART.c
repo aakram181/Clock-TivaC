@@ -52,8 +52,6 @@ void UARTPrintChar(unsigned char c){
 }
 
 
-
-
 /**
 * Sends a string through UART to be printed on screen by continuously calling UARTPrintChar on every character in the string.
 * @params unsigned char *str is the string passed to be sent 

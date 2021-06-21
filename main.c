@@ -84,15 +84,12 @@ void ByteToStr(unsigned char c, char *Txt){
 static void Task1(void *pvParameters){
 	AMessage Tim;
 	xQueueReceive(xQueue2, &Tim, portMAX_DELAY); 	// Receive initial time via queue 2
-	Tim.hh = 20;
-	Tim.mm = 23;
-	Tim.ss = 30;
 	while(1){
-		vTaskDelay(pdMS_TO_TICKS(ONE_SECOND)); 														// Block the task for 1 second
-		Tim.ss++; 																									// Increment the seconds 
+		vTaskDelay(pdMS_TO_TICKS(ONE_SECOND)); 				// Block the task for 1 second
+		Tim.ss++; 																		// Increment the seconds 
 		
-		if(Tim.ss == 60) 													   // If seconds = 60, reset it and add 1 to minutes, if minutes = 60, reset it and add 1 to hours
-		{																						// If hours = 24, reset it back to zero
+		if(Tim.ss == 60) 													   	// If seconds = 60, reset it and add 1 to minutes, if minutes = 60, reset it and add 1 to hours
+		{																							// If hours = 24, reset it back to zero
 			Tim.ss = 0;
 			Tim.mm ++;
 			if(Tim.mm == 60){
@@ -129,9 +126,11 @@ static void Task2(void *pvParameters){
 		LCDCMD(RETURN_HOME);    //Return cursor back to home
 		
 		taskENTER_CRITICAL(); // Disable interrupts while printing time to prevent 'selection' from being changed
+		
 		LCDPrintString(cities[selection]); // Display the selection on LCD screen
 		LCDCMD(CURSOR_SECOND_LINE);		// Move cursor of screen to second line (preparing to print time)
 		Tim.hh = (Tim.hh + timediff[selection]); // Add the time difference of the selection to the london time hours
+		
 		taskEXIT_CRITICAL();
 		
 		if(Tim.hh > 23) 
@@ -155,20 +154,7 @@ static void Task2(void *pvParameters){
 	
 }
 
-/**
-* Triggered when user enters a character through the UART (on putty screen)
-* It unblocks task 3, which is responsible for UART to print the character which will consequently set the new selection as the entered character
-*/
-void UART_ISR(){
-	selection = UARTCharGetNonBlocking(UART0_BASE);
-	UARTIntClear(UART0_BASE,UART_INT_RX);
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	xSemaphoreGiveFromISR(xSemaphore0,&xHigherPriorityTaskWoken);
-	portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
-	
-	
-	
-}
+
 
 
 
@@ -220,3 +206,14 @@ static void Task3(void *pvParameters){
 }
 }
 
+/**
+* Triggered when user enters a character through the UART (on putty screen)
+* It unblocks task 3, which is responsible for UART to print the character which will consequently set the new selection as the entered character
+*/
+void UART_ISR(){
+	selection = UARTCharGetNonBlocking(UART0_BASE);
+	UARTIntClear(UART0_BASE,UART_INT_RX);
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	xSemaphoreGiveFromISR(xSemaphore0,&xHigherPriorityTaskWoken);
+	portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
+}

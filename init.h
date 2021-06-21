@@ -38,6 +38,7 @@ static void Task2(void *pvParameters);
 static void Task3(void *pvParameters); 
 static void Task1(void *pvParameters);
 void Read_Time(char *);
+void ByteToStr(unsigned char , char *);
 
 typedef struct Message // The time data structure
 {
