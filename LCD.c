@@ -3,7 +3,10 @@
 
 
 
-
+/**
+* Passes a command to the LCD as unsigned char - list of commands and what they do can be found in the LCD data sheet
+* @param cmd is the command to be passed
+*/
 void LCDCMD(unsigned char cmd) {
 		GPIOPinWrite(GPIO_PORTA_BASE,REGISTER_SELECT|READ_WRITE,!REGISTER_SELECT|!READ_WRITE); // RS= 0 , RW = 0
 		GPIOPinWrite(GPIO_PORTB_BASE,D0|D1|D2|D3|D4|D5|D6|D7,cmd); // write command
@@ -14,6 +17,10 @@ void LCDCMD(unsigned char cmd) {
 
 }
 
+/**
+* Prints one character on the LCD
+* @param data the character to print
+*/
 void LCDPrintChar (unsigned char data) {
 		GPIOPinWrite(GPIO_PORTA_BASE,REGISTER_SELECT|READ_WRITE,REGISTER_SELECT|!READ_WRITE); // RS= 1, RW = 0
 		GPIOPinWrite(GPIO_PORTB_BASE,D0|D1|D2|D3|D4|D5|D6|D7,data); //write text
@@ -24,6 +31,10 @@ void LCDPrintChar (unsigned char data) {
 
 }
 
+/**
+* Prints a string of characters on the LCD by continuously calling LCDPrintChar() on each character in the string
+* @param data the character to print
+*/
 void LCDPrintString(char *text){
 	for(int i = 0 ; i < strlen(text); i++){
 		LCDPrintChar(text[i]);
@@ -31,7 +42,10 @@ void LCDPrintString(char *text){
 }
 
 
-
+/**
+* Initialized GPIOA and GPIOB and the pins that will be used with the LCD.
+* Adds delays between commands as instructed in the LCD's data sheet.
+*/
 void LCDInit(){
 	// Initializing ports and pins
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
@@ -52,7 +66,7 @@ void LCDInit(){
 		LCDCMD(0x30);		
 		SysCtlDelay(50000); 
 	
-  // Prepare LCD Operation and Function  
+		// Prepare LCD Operation and Function  
     LCDCMD(0x38);      // 8 bit 2 lines
     LCDCMD(0x06);      // increment cursor to right
     LCDCMD(0x0F);      // display on, cursor blinking

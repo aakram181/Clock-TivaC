@@ -1,6 +1,12 @@
 #include "UART.h"
 
-
+/**
+* Enables UART0 along with GPIOA Pins 0 and 1.
+* Configures UART with baud rate 6900, length 8, 1 stop bit, and no parse bits
+* Configures Pins 0 and 1 as UART Rx and Tx pins
+* Registers the priorirt for UART recieve with ISR "UART_ISR"
+* Sets priority to interrupt as '5', which is greater than configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY 
+*/
 void UARTInit(){
   //clock to port A and uart0
   SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
@@ -26,14 +32,20 @@ void UARTInit(){
 }
 
 
-
+/**
+* Checks for characters and returns them from UART0
+* @return character received from UART
+*/
 unsigned char UARTRx(){
   //check for characters in fifo
   while(!UARTCharsAvail(UART0_BASE)){}
   return UARTCharGet(UART0_BASE);
 }
 
-
+/**
+* Sends character through UART to be printed on screen
+* @params unsigned char c is the character passed to be sent 
+*/
 void UARTPrintChar(unsigned char c){
       UARTCharPut(UART0_BASE,c);
 
@@ -42,7 +54,10 @@ void UARTPrintChar(unsigned char c){
 
 
 
-
+/**
+* Sends a string through UART to be printed on screen by continuously calling UARTPrintChar on every character in the string.
+* @params unsigned char *str is the string passed to be sent 
+*/
 void UARTPrintString(unsigned char *str){
   while(*str)
   {

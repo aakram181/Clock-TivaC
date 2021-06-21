@@ -7,10 +7,12 @@ int main(){
 		
 
 		
-	xQueue1 = xQueueCreate(1,8);
-	xQueue2 = xQueueCreate(1,8);
-	xSemaphore0 = xSemaphoreCreateBinary();
-	xTaskCreate(Task3, "UART Controller",250,NULL,1,NULL);
+	xQueue1 = xQueueCreate(1,8); // Create queue size 1, 8 bytes
+	xQueue2 = xQueueCreate(1,8); // Create queue size 1, 8 bytes
+	xSemaphore0 = xSemaphoreCreateBinary(); // Create Binary Sempahore
+	
+	//Create 3 tasks and set all their priorities to 1
+	xTaskCreate(Task3, "UART Controller",250,NULL,1,NULL); 
 	xTaskCreate(Task2, "LCD_Controller", 250, NULL,1,NULL);
 	xTaskCreate(Task1, "Time_Increment", 250, NULL,1,NULL);
 
@@ -27,14 +29,15 @@ int main(){
 void Read_Time(char buf[]){
 	unsigned char c;
 	unsigned char k = 0;
-	while(c != 0x0d){
-		c = UARTRx();
-		UARTPrintChar(c);
+	while(c != 0x0d){ 	// While entered character isnt the button 'enter'
+		c = UARTRx(); 		// Receive character from UART
+		UARTPrintChar(c); // Print char on pc
 		buf[k] = c;
 		k++;
 	}
-	buf[k] = '\0';
+	buf[k] = '\0'; // add end char
 }
+
 
 
 /**
@@ -43,7 +46,7 @@ void Read_Time(char buf[]){
 *@params buf[] is the buffer array where the characters entered by user will be stored and later converted to time.
 *@return Total, is the integer value of the characters entered by use
 */
-unsigned int Read_From_Keyboard(){
+/*unsigned int Read_From_Keyboard(){
 	unsigned int Total;
 	unsigned char N;
 	Total = 0;
@@ -54,7 +57,7 @@ unsigned int Read_From_Keyboard(){
 		N = N - '0';  							//Convert entered character to int digit
 		Total = 10*Total + N;				
 	}
-}
+}*/
 	
 	
 /**
@@ -152,7 +155,10 @@ static void Task2(void *pvParameters){
 	
 }
 
-
+/**
+* Triggered when user enters a character through the UART (on putty screen)
+* It unblocks task 3, which is responsible for UART to print the character which will consequently set the new selection as the entered character
+*/
 void UART_ISR(){
 	selection = UARTCharGetNonBlocking(UART0_BASE);
 	UARTIntClear(UART0_BASE,UART_INT_RX);
@@ -169,8 +175,9 @@ void UART_ISR(){
 
 /**
 * This task first initializes UART. It then prints a welcome message and asks the user to enter time in london in hh:mm:ss format.
-* Then it displays the list of available cities from the cities[] array, and prompts the user to select one of the cities.
-* After the user selects the cities, the task sends the choice to the LCD task through a queue
+* Then it displays the list of available cities from the cities[] array, and prompts the user to select one of the cities, and WAITS for the sempahore
+* Semaphore is received from UART ISR when the users enters a new selection on the screen. 
+* Once it unblocks, it sets the new selection = character entered, and repeats the process again.
 */
 static void Task3(void *pvParameters){
 	AMessage Tim;
@@ -207,7 +214,7 @@ static void Task3(void *pvParameters){
 		UARTPrintChar(selection);
 		UARTPrintString("\n\r");
 
-		selection = selection - '0';
+		selection = selection - '0'; // Entered character is the new city selection
 
 		//selection = Read_From_Keyboard();  // Wait for user to enter city selection
 }

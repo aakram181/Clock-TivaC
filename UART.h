@@ -1,3 +1,9 @@
+/**
+ * This header file contains the library includes, function prototypes, and the definitions that
+ * belong to the UART module. It will be included in UART.c
+ */
+
+
 #include "stdint.h"
 #include "stdbool.h"
 #include "inc/hw_ints.h"
