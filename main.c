@@ -40,24 +40,7 @@ void Read_Time(char buf[]){
 
 
 
-/**
-* Reads characters from keyboard and converts it into an integer
-* Once Enter is clicked, its returns the integer
-*@params buf[] is the buffer array where the characters entered by user will be stored and later converted to time.
-*@return Total, is the integer value of the characters entered by use
-*/
-/*unsigned int Read_From_Keyboard(){
-	unsigned int Total;
-	unsigned char N;
-	Total = 0;
-	while(1){
-		N = UARTRx(); 							//Receive entered character
-		UARTPrintChar(N); 					//Print it on PC
-		if(N == 0x0d) return Total; //If character is "Enter" return Total 
-		N = N - '0';  							//Convert entered character to int digit
-		Total = 10*Total + N;				
-	}
-}*/
+
 	
 	
 /**
