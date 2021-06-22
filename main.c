@@ -4,9 +4,6 @@
 
 
 int main(){
-		
-
-		
 	xQueue1 = xQueueCreate(1,8); // Create queue size 1, 8 bytes
 	xQueue2 = xQueueCreate(1,8); // Create queue size 1, 8 bytes
 	xSemaphore0 = xSemaphoreCreateBinary(); // Create Binary Sempahore
@@ -17,6 +14,9 @@ int main(){
 	xTaskCreate(Task1, "Time_Increment", 250, NULL,1,NULL);
 
 	vTaskStartScheduler();
+	
+	// Should never reach here
+	while(1){}
 }
 
 
@@ -159,9 +159,7 @@ static void Task3(void *pvParameters){
 	UARTPrintString("========================\r\n");
 	UARTPrintString("Please enter time in london (hh:mm:ss):  \r\n");
 	
-	
 	Read_Time(buf); // Now it contains the time in hh:mm:ss format
-	
 	
 	// Converting the array form of time into integers stored in the Tim data structure.
 	Tim.hh = 10 * (buf[0] - '0') + buf[1] - '0'; 
