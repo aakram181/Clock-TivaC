@@ -91,6 +91,8 @@ static void Task1(void *pvParameters){
 /**
 * This task is the LCD controller. It received the incremented time from task 1.
 * Each time it receives the time through the queue, it prints the time and city on the LCD screen using the LCD functions.
+* The part that prints the city on the LCD and sets the timezone is put in a critical section to prevent the ISR from changing the 'selection' variable
+* in between the 'LCDPrintString(cities[selection])' and 'Tim.hh = (Tim.hh + timediff[selection])' which might cause an incorrect time printed for the selected city.
 */
 static void Task2(void *pvParameters){
 	
